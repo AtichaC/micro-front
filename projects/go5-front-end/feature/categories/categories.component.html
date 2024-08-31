@@ -1,0 +1,33 @@
+<div class="container">
+  <h1 class="mt-2">Categories</h1>
+  <div class="d-flex justify-content-end">
+    <a class="btn btn-primary"> Add Category</a>
+  </div>
+</div>
+<div class="container">
+  @if (category.length) {
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Url Handle</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (element of category; track element.id) {
+      <tr>
+        <td>{{ element.id }}</td>
+        <td>{{ element.name }}</td>
+        <td>{{ element.urlHandle }}</td>
+        <td>
+          <a class="btn btn-primary">Edit</a>
+          <a class="btn btn-danger">Delete</a>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  }
+</div>
